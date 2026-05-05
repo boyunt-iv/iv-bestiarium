@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="tiktok-domain-verification" content="YOUR_TIKTOK_VERIFICATION_CODE"/>
+  <title>IV Bestiarium: The Hidden Ark — Legal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #2a2f3d;
+      --gold: #c9a84c;
+      --gold-dim: #7a6030;
+      --text: #d4cfc6;
+      --muted: #6b6660;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold-dim);
+      transform: rotate(45deg);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .logo-mark::after {
+      content: '✦';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-45deg);
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Nav tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 48px;
+      border: 1px solid var(--border);
+    }
+
+    .tab {
+      flex: 1;
+      padding: 14px;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: all 0.3s;
+      border-right: 1px solid var(--border);
+    }
+    .tab:last-child { border-right: none; }
+    .tab:hover { color: var(--gold); background: rgba(201,168,76,0.04); }
+    .tab.active {
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    /* Sections */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .effective-date {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* Content blocks */
+    .block {
+      margin-bottom: 36px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+
+    .block-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .block p {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .block ul li {
+      font-size: 14px;
+      color: var(--text);
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .block ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 40px 0;
+    }
+
+    /* Contact */
+    .contact-box {
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      background: var(--surface);
+    }
+
+    .contact-box p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-box a {
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo-mark"></div>
+    <h1>IV Bestiarium: The Hidden Ark</h1>
+    <p class="subtitle">Legal Documentation</p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+    <button class="tab" onclick="switchTab('terms', this)">Terms of Service</button>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="section active" id="privacy">
+    <div class="section-header">
+      <div class="section-title">Privacy Policy</div>
+      <div class="effective-date">Effective Date: May 2026</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Overview</div>
+      <p>IV Bestiarium: The Hidden Ark ("the App") is used for automatic content publishing to social media platforms including Facebook, Instagram, TikTok, and YouTube. This policy explains how we handle data.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Data We Collect</div>
+      <p>We do not collect, store, or process any personal data from users or visitors of this application.</p>
+      <ul>
+        <li>No personal information is gathered</li>
+        <li>No cookies are used for tracking</li>
+        <li>No analytics or third-party trackers are installed</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">API & Token Usage</div>
+      <p>The App uses OAuth 2.0 access tokens provided by Meta, TikTok, and Google APIs solely for the purpose of publishing content on behalf of the authorized account owner.</p>
+      <ul>
+        <li>Tokens are stored locally and never shared</li>
+        <li>Tokens are used only for posting content</li>
+        <li>No data is transmitted to third parties</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Third-Party Services</div>
+      <p>This app interacts with the following third-party APIs:</p>
+      <ul>
+        <li>Meta Graph API (Facebook & Instagram)</li>
+        <li>TikTok Content Posting API</li>
+        <li>YouTube Data API v3</li>
+      </ul>
+      <p>Each platform's own privacy policy governs how they handle data on their end.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Contact</div>
+      <div class="contact-box">
+        <p>For privacy-related questions, contact us at: <a href="mailto:your@email.com">your@email.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS OF SERVICE -->
+  <div class="section" id="terms">
+    <div class="section-header">
+      <div class="section-title">Terms of Service</div>
+      <div class="effective-date">Effective Date: May 2026</div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Acceptance of Terms</div>
+      <p>By using IV Bestiarium: The Hidden Ark, you agree to these Terms of Service. If you do not agree, please discontinue use of the application.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Permitted Use</div>
+      <p>This application is intended solely for personal content publishing. You agree to:</p>
+      <ul>
+        <li>Use the app only for lawful purposes</li>
+        <li>Not use it to post harmful, offensive, or illegal content</li>
+        <li>Comply with the terms of each connected social media platform</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Content Responsibility</div>
+      <p>You are solely responsible for all content published through this application. We do not review, endorse, or take responsibility for any content posted on your behalf.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Intellectual Property</div>
+      <p>You confirm that you own or have the rights to all content you publish through this application, and that such content does not infringe any third-party rights.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Disclaimer of Warranties</div>
+      <p>This application is provided "as is" without warranties of any kind. We are not liable for any disruptions caused by third-party API changes, platform outages, or rate limiting.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Changes to Terms</div>
+      <p>We reserve the right to update these terms at any time. Continued use of the application constitutes acceptance of the revised terms.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <div class="block-title">Contact</div>
+      <div class="contact-box">
+        <p>For questions regarding these terms, contact: <a href="mailto:boyunt.contact@gmail.com">boyunt.contact@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 IV Bestiarium: The Hidden Ark — All rights reserved</p>
+  </footer>
+
+</div>
+
+<script>
+  function switchTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
